@@ -73,3 +73,55 @@ Example:
 
 Input: ([1, 2, 3, 4, 5], 5)
 Output: [[1, 4], [2, 3]]
+
+======================================================(9)=========================================================================
+
+Write a function to find the first non-repeating character in a string. If there is no such character, return null.
+
+Example:
+
+Input: "swiss"
+Output: 'w'
+Input: "aabbcc"
+Output: null
+
+====================================================(10)==========================================================================
+
+Write a function to remove all falsy values from an array. Falsy values in JavaScript include false, null, 0, "", undefined,
+and NaN.
+
+Example:
+Input: [0, 1, false, 2, "", 3]
+Output: [1, 2, 3]
+
+======================================================(11)========================================================================
+
+Write a function to remove duplicates from an array without using Set.
+
+Example:
+Input: [1, 2, 2, 3, 4, 4, 5]
+Output: [1, 2, 3, 4, 5]
+
+======================================================(12)========================================================================
+
+Write a function to capitalize the first letter of every word in a given string.
+
+Example:
+Input: "hello world"
+Output: "Hello World"
+
+======================================================(12)========================================================================
+
+Write a function to count the occurrences of each character in a string.
+
+Example:
+Input: "hello"
+Output: { h: 1, e: 1, l: 2, o: 1 }
+
+======================================================(12)========================================================================
+
+Write a function to reverse a string without using built-in methods like reverse().
+
+Example:
+Input: "hello"
+Output: "olleh"

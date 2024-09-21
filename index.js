@@ -134,3 +134,109 @@ function findPairs(arr, target) {
   }
   return pairs;
 }
+
+console.log(findPairs([1, 2, 3, 4, 5], 5));
+
+//🔥🔥🔥🔥🔥=============================(9)=====================================🔥🔥🔥🔥🔥//
+
+function firstNonRepeatingChar(str) {
+  const charCount = {}; // Object to store character frequencies
+
+  // Step 1: Count frequency of each character
+  for (let char of str) {
+    if (charCount[char]) {
+      charCount[char]++;
+    } else {
+      charCount[char] = 1;
+    }
+  }
+
+  // Step 2: Find the first character with a count of 1
+  for (let char of str) {
+    if (charCount[char] === 1) {
+      return char; // Return the first non-repeating character
+    }
+  }
+
+  // If no non-repeating character is found, return null
+  return null;
+}
+
+console.log(firstNonRepeatingChar("swiss")); // Output: 'w'
+console.log(firstNonRepeatingChar("aabbcc")); // Output: null
+
+//🔥🔥🔥🔥🔥=============================(10)=====================================🔥🔥🔥🔥🔥//
+
+function removeFalsy(arr) {
+  let truthyValues = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (Boolean(arr[i])) {
+      // Check if the value is truthy
+      truthyValues.push(arr[i]); // Push only truthy values
+    }
+  }
+  return truthyValues;
+}
+
+console.log(removeFalsy([0, 1, false, 2, "", 3])); // Output: [1, 2, 3]
+
+//🔥🔥🔥🔥🔥=============================(11)=====================================🔥🔥🔥🔥🔥//
+
+function removeDupes(arr) {
+  let unique = [];
+  for (const num of arr) {
+    if (!unique.includes(num)) {
+      unique.push(num);
+    }
+  }
+  return unique;
+}
+
+console.log(removeDupes([1, 2, 2, 3, 4, 4, 5])); // Output: [1, 2, 3, 4, 5]
+
+//🔥🔥🔥🔥🔥=============================(12)=====================================🔥🔥🔥🔥🔥//
+
+function capitalizeWords(str) {
+  let newStr = str.toLowerCase().split(" ");
+
+  for (let i = 0; i < newStr.length; i++) {
+    newStr[i] = newStr[i].charAt(0).toUpperCase() + newStr[i].slice(1);
+  }
+
+  return newStr.join(" "); // Join the array back into a string
+}
+
+console.log(capitalizeWords("hello world")); // Output: "Hello World"
+
+//🔥🔥🔥🔥🔥=============================(12)=====================================🔥🔥🔥🔥🔥//
+
+function count(str) {
+  const charObj = {};
+
+  for (let char of str) {
+    if (char !== " ") {
+      if (charObj[char]) {
+        charObj[char]++;
+      } else {
+        charObj[char] = 1;
+      }
+    }
+  }
+  return charObj;
+}
+
+console.log(count("hello world"));
+
+//🔥🔥🔥🔥🔥=============================(13)=====================================🔥🔥🔥🔥🔥//
+
+function reverse(str) {
+  let newStr = str.split("");
+  let reversed = "";
+
+  for (let i = newStr.length - 1; i >= 0; i--) {
+    reversed += newStr[i];
+  }
+  return reversed;
+}
+
+console.log(reverse("hello"));
