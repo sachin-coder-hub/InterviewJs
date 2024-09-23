@@ -118,10 +118,20 @@ Example:
 Input: "hello"
 Output: { h: 1, e: 1, l: 2, o: 1 }
 
-======================================================(12)========================================================================
+======================================================(13)========================================================================
 
 Write a function to reverse a string without using built-in methods like reverse().
 
 Example:
 Input: "hello"
 Output: "olleh"
+
+======================================================(14)========================================================================
+
+Write a function that checks if two strings are anagrams of each other. An anagram is a word or phrase formed by rearranging the letters of a different word or phrase.
+
+Input: "listen", "silent"
+Output: true
+
+Input: "hello", "world"
+Output: false

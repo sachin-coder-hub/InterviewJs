@@ -240,3 +240,21 @@ function reverse(str) {
 }
 
 console.log(reverse("hello"));
+
+//🔥🔥🔥🔥🔥=============================(14)=====================================🔥🔥🔥🔥🔥//
+
+function areAnagrams(str1, str2) {
+  // Normalize the strings: remove spaces and convert to lowercase
+  const normalizedStr1 = str1.replace(/\s+/g, "").toLowerCase();
+  const normalizedStr2 = str2.replace(/\s+/g, "").toLowerCase();
+
+  // Sort the characters of both strings
+  const sortedStr1 = normalizedStr1.split("").sort().join("");
+  const sortedStr2 = normalizedStr2.split("").sort().join("");
+
+  // Compare sorted strings
+  return sortedStr1 === sortedStr2;
+}
+
+console.log(areAnagrams("listen", "silent")); // Output: true
+console.log(areAnagrams("hello", "world")); // Output: false
