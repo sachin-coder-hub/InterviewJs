@@ -135,3 +135,45 @@ Output: true
 
 Input: "hello", "world"
 Output: false
+
+======================================================(15)========================================================================
+
+Find Missing Number in Array
+
+You are given an array containing n - 1 integers where the integers are in the range from 1 to n. There are no duplicates in the list. One integer is missing from the range. Write a function to find the missing number.
+
+findMissing([3, 7, 1, 2, 8, 4, 5]); // Output: 6
+findMissing([1, 2, 4, 6, 3, 7, 8]); // Output: 5
+
+======================================================(16)========================================================================
+
+Write a function that takes an array of numbers and moves all the zeros to the end of the array, maintaining the relative order of the other elements.
+
+Example:
+
+js
+Copy code
+Input: [0, 1, 0, 3, 12]
+Output: [1, 3, 12, 0, 0]
+
+======================================================(17)========================================================================
+Rotate Array
+Problem Statement: Given an array nums and a number k, rotate the array to the right by k steps, where k is non-negative.
+
+Example:
+Input: nums = [1, 2, 3, 4, 5, 6, 7], k = 3
+Output: [5, 6, 7, 1, 2, 3, 4]
+
+======================================================(18)========================================================================
+Promise Chaining (Easy)
+Question: Write a function that returns a promise that resolves after a specified time.
+
+======================================================(19)========================================================================
+
+Handling Promises (Medium)
+Question: Create a function that accepts an array of URLs and fetches data from each URL. Use Promise.all() to wait for all requests to complete and return the data.
+
+======================================================(20)========================================================================
+
+Async/Await with Error Handling (Medium)
+Question: Implement an asynchronous function that fetches user data from an API and handles any potential errors using try/catch.

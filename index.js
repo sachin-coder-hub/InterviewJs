@@ -258,3 +258,129 @@ function areAnagrams(str1, str2) {
 
 console.log(areAnagrams("listen", "silent")); // Output: true
 console.log(areAnagrams("hello", "world")); // Output: false
+
+//🔥🔥🔥🔥🔥=============================(15)=====================================🔥🔥🔥🔥🔥//
+
+function findMissing(arr) {
+  let n = arr.length + 1; // Since one number is missing, we assume the array length should be n+1
+  let expectedSum = (n * (n + 1)) / 2; // Sum of first n natural numbers formula
+  let actualSum = 0;
+
+  arr.forEach(function (number) {
+    actualSum += number;
+  });
+
+  return expectedSum - actualSum; // The difference gives the missing number
+}
+
+console.log(findMissing([1, 2, 4, 6, 3, 7, 8]));
+
+//🔥🔥🔥🔥🔥=============================(16)=====================================🔥🔥🔥🔥🔥//
+
+function moveZerosToEnd(arr) {
+  let zeros = [];
+  let newArr = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] !== 0) {
+      newArr.push(arr[i]);
+    } else {
+      zeros.push(arr[i]);
+    }
+  }
+  return [...newArr, ...zeros];
+}
+
+console.log(moveZerosToEnd([0, 1, 0, 3, 12]));
+
+//🔥🔥🔥🔥🔥=============================(17)=====================================🔥🔥🔥🔥🔥//
+
+function rotateArray(nums, k) {
+  const n = nums.length;
+  // Ensure k is within the bounds of the array length
+  k = k % n;
+
+  // Use slice to get the two parts of the array
+  const part1 = nums.slice(n - k); // Last k elements
+  const part2 = nums.slice(0, n - k); // Remaining elements
+
+  // Concatenate the two parts
+  const rotated = part1.concat(part2);
+
+  // Update the original array
+  for (let i = 0; i < n; i++) {
+    nums[i] = rotated[i];
+  }
+}
+
+// Example usage:
+const nums = [1, 2, 3, 4, 5, 6, 7];
+const k = 3;
+rotateArray(nums, k);
+console.log(nums); // Output: [5, 6, 7, 1, 2, 3, 4]
+
+//🔥🔥🔥🔥🔥=============================(18)=====================================🔥🔥🔥🔥🔥//
+
+const myPromise = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve("resolved");
+  }, 3000);
+});
+
+myPromise.then((result) => {
+  console.log(result);
+});
+
+//🔥🔥🔥🔥🔥=============================(19)=====================================🔥🔥🔥🔥🔥//
+
+async function fetchAllData(urls) {
+  try {
+    const fetchpromises = urls.map((url) => fetch(url));
+    const resp = await Promise.all(fetchpromises);
+    const datas = resp.map((res) => {
+      if (!res.ok) {
+        throw new Error("Network issue");
+      }
+      return res.json();
+    });
+    const data = await Promise.all(datas);
+    return data;
+  } catch (error) {
+    console.error("error found: ", error);
+  }
+}
+
+const urls = [
+  "https://jsonplaceholder.typicode.com/posts/1",
+  "https://jsonplaceholder.typicode.com/posts/2",
+  "https://jsonplaceholder.typicode.com/posts/3",
+];
+
+fetchAllData(urls).then((data) => {
+  console.log(data);
+});
+
+//🔥🔥🔥🔥🔥=============================(20)=====================================🔥🔥🔥🔥🔥//
+async function fetchUserData(url) {
+  try {
+    const response = await fetch(url); // Use 'response' instead of 'data'
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`); // Handle non-200 status
+    }
+
+    const json = await response.json();
+    return json;
+  } catch (error) {
+    console.error("Error:", error); // Use console.error to log errors
+  }
+}
+
+// Example URL to fetch user data from (this should be a valid API endpoint)
+const url = "https://jsonplaceholder.typicode.com/users/1";
+
+fetchUserData(url).then((data) => {
+  if (data) {
+    console.log(data); // Log the fetched user data
+  }
+});
