@@ -384,3 +384,98 @@ fetchUserData(url).then((data) => {
     console.log(data); // Log the fetched user data
   }
 });
+
+
+//🔥🔥🔥🔥🔥=============================(21)=====================================🔥🔥🔥🔥🔥//
+
+function once(fn) {
+  let called = false;
+  let result;
+
+  return function (...args) {
+    if (!called) {
+      result = fn.apply(this, args);
+      called = true;
+    }
+    return result;
+  };
+}
+
+// Example
+function greet(name) {
+  console.log("Function is called!");
+  return `Hello, ${name}`;
+}
+
+const greetOnce = once(greet);
+
+console.log(greetOnce("Sachin")); // Logs: Function is called! + Hello, Sachin
+console.log(greetOnce("John"));   // Logs: Hello, Sachin (no function call again)
+console.log(greetOnce("Jane"));   // Logs: Hello, Sachin
+
+
+//🔥🔥🔥🔥🔥=============================(22)=====================================🔥🔥🔥🔥🔥//
+
+function memoFun(func) {
+    let cache = {};
+    return function (...args) {
+        let key = JSON.stringify(args);
+        if (key in cache) {
+            console.log("from cache");
+            return cache[key];
+        } else {
+            let result = func(...args);
+            cache[key] = result;
+            return result;
+        }
+    };
+}
+
+function memoize(a, b) {
+    console.log("Computing...");
+    return a + b;
+}
+
+const memoizedAdd = memoFun(memoize);
+
+console.log(memoizedAdd(9, 3)); // Computing... 12
+console.log(memoizedAdd(9, 3)); // from cache 12
+
+//🔥🔥🔥🔥🔥=============================(23)=====================================🔥🔥🔥🔥🔥//
+
+const data = [
+  { name: "Sachin", age: 25 },
+  { name: "Ajay", age: 30 },
+  { name: "Rahul", age: 25 },
+];
+
+const grouped = Object.groupBy(data, ({ age }) => age);
+
+console.log(grouped);
+
+// While Object.groupBy() is modern and concise, it might not be available in all environments
+//(especially older browsers or Node versions < 20). So, if you're asked to implement groupBy manually, here's how you can do it:
+function groupBy(array, keyFn) {
+  const result = {};
+
+  for (const item of array) {
+    const key = keyFn(item);
+    if (!result[key]) {
+      result[key] = [];
+    }
+    result[key].push(item);
+  }
+
+  return result;
+}
+
+const data1 = [
+  { name: "Sachin", age: 25 },
+  { name: "Ajay", age: 30 },
+  { name: "Rahul", age: 25 },
+];
+
+const grouped1 = groupBy(data1, (item) => item.age);
+
+console.log(grouped1);
+

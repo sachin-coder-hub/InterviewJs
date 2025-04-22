@@ -177,3 +177,16 @@ Question: Create a function that accepts an array of URLs and fetches data from 
 
 Async/Await with Error Handling (Medium)
 Question: Implement an asynchronous function that fetches user data from an API and handles any potential errors using try/catch.
+
+======================================================(21)========================================================================
+
+Create a function once(fn) that ensures the given function fn can only be called once. Subsequent calls should return the result of the first call.
+
+======================================================(22)========================================================================
+
+Write a function memoize(fn) that returns a memoized version of fn.
+If the memoized function is called with the same arguments again, it should return the cached result instead of computing it again.
+
+======================================================(23)========================================================================
+
+Implement a function groupBy that groups the elements of an array based on a provided key function.
