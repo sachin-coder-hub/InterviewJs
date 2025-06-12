@@ -190,3 +190,12 @@ If the memoized function is called with the same arguments again, it should retu
 ======================================================(23)========================================================================
 
 Implement a function groupBy that groups the elements of an array based on a provided key function.
+
+======================================================(24)========================================================================
+
+Write a function maxOccurringChar(str) that returns the character which appears maximum number of times in the string. If multiple characters have the same max frequency, return the first one that appears.
+
+======================================================(25)========================================================================
+
+Longest Substring Without Repeating Characters
+Write a function longestUniqueSubstring(str) that returns the length of the longest substring with all unique characters.

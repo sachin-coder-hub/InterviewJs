@@ -479,3 +479,46 @@ const grouped1 = groupBy(data1, (item) => item.age);
 
 console.log(grouped1);
 
+//🔥🔥🔥🔥🔥=============================(24)=====================================🔥🔥🔥🔥🔥//
+
+function maxOccurringChar(str) {
+  const freq = {};
+  let maxCount = 0;
+  let resultChar = "";
+
+  for (const char of str) {
+    freq[char] = (freq[char] || 0) + 1;
+  }
+
+  for (const char of str) {
+    if (freq[char] > maxCount) {
+      maxCount = freq[char];
+      resultChar = char;
+    }
+  }
+
+  return resultChar;
+}
+
+//🔥🔥🔥🔥🔥=============================(25)=====================================🔥🔥🔥🔥🔥//
+
+function longestUniqueSubstring(str) {
+  let subStr = "";
+  let maxLength = 0;
+
+  for (let char of str) {
+    if (!subStr.includes(char)) {
+      subStr += char;
+      maxLength = Math.max(maxLength, subStr.length);
+    } else {
+      // find the duplicate index
+      const dupIndex = subStr.indexOf(char);
+      // remove everything before and including the duplicate
+      subStr = subStr.slice(dupIndex + 1) + char;
+    }
+  }
+
+  return maxLength;
+}
+
+
